@@ -2,7 +2,6 @@
 #include <rthw.h>
 #include "stm32f10x.h"
 #include "bsp_AD5160.h"
-#ifdef USE_AD5160
 void rt_hw_ad5160_init(void)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
@@ -32,14 +31,14 @@ void rt_hw_ad5160_init(void)
 }
 
 
-//设置ad5160输出
+//璁剧疆ad5160杈撳嚭
 void setAd5160(unsigned char in)
 {
 	unsigned char i;
 	unsigned char delay;
 	unsigned char t = in;
 	
-	//选中ad5160
+	//閫変腑ad5160
 	HVW_CS_L();
 
 	HVW_SCK_H();
@@ -76,11 +75,11 @@ void setAd5160(unsigned char in)
 		while(delay--);
 	}
 
-//将数据写入AD5160
+//灏嗘暟鎹啓鍏D5160
 	HVW_CS_H();
 }
 
-#endif
+
 
 
 
