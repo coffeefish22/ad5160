@@ -5,11 +5,10 @@
 void rt_hw_ad5160_init(void)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
-//	DAC_InitTypeDef DAC_InitType; 
 
     RCC_APB2PeriphClockCmd(hvw_sck_rcc|hvw_sdi_rcc|hvw_cs_rcc,ENABLE);
 
-	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_PP;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 
     GPIO_InitStructure.GPIO_Pin   = hvw_sck_pin;
@@ -78,6 +77,7 @@ void setAd5160(unsigned char in)
 //将数据写入AD5160
 	HVW_CS_H();
 }
+
 
 
 
